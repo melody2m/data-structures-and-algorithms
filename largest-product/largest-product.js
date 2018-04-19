@@ -2,18 +2,18 @@
 
 const prod = module.exports = {};
 
-prod.LargestProduct = (arrObj) => {
+prod.LargestProduct = (arr) => {
   let largest = 0;
-  for (let i = 0; i < arrObj.length; i++) {
-    for (let j = 0; j < arrObj[i].length; j++) {
-      if (arrObj[i][j + 1]) {
-        const current = arrObj[i][j] * arrObj[i][j + 1];
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < arr[i].length; j++) {
+      if (arr[i][j + 1]) {
+        const current = arr[i][j] * arr[i][j + 1];
         if (current > largest) {
           largest = current;
         }
       }
-      if (arrObj[i + 1]) {
-        const current = arrObj[i][j] * arrObj[i + 1][j];
+      if (arr[i + 1]) {
+        const current = arr[i][j] * arr[i + 1][j];
         if (current > largest) {
           largest = current;
         }
