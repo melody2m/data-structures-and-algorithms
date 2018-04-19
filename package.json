@@ -26,5 +26,7 @@
     "eslint-plugin-jest": "^21.15.0",
     "jest": "^22.4.3"
   },
-  "dependencies": {}
+  "dependencies": {
+    "winston": "^2.4.1"
+  }
 }
