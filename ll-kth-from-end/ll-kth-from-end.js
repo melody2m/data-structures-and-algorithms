@@ -6,7 +6,7 @@ module.exports = class LinkedList {
   constructor() {
     this.head = null;
   }
-  
+
   insertAtHead(value) {
     const node = new Node(value);
 
@@ -24,6 +24,11 @@ module.exports = class LinkedList {
       counter += 1;
     }
     currentNode = this.head;
+
+    if (k > counter) {
+      return 'Exception';
+    }
+    
     while (counter - k > 0) {
       currentNode = currentNode.next;
       counter -= 1;
