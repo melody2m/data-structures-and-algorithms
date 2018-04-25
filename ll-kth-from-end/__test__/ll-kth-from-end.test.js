@@ -16,6 +16,6 @@ describe('linked-list.js', () => {
     testList.insertAtHead(8);
     expect(testList.kthFromEnd(0).value).toEqual(5);
     expect(testList.kthFromEnd(1).value).toEqual(6);
-    expect(testList.kthFromEnd(2).value).toEqual(7);
+    expect(testList.kthFromEnd(4)).toEqual('Exception');
   });
 });
