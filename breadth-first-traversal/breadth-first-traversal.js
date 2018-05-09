@@ -8,13 +8,18 @@ breadthFirst.queue = [];
 breadthFirst.traversal = (rootNode) => {
   breadthFirst.queue.push(rootNode);
   let current = null;
-  while (breadthFirst.queue) {
+
+  while (breadthFirst.queue.length > 0) {
     current = breadthFirst.queue.pop();
-    console.log(current);
-    console.log(breadthFirst.queue);
+    
     breadthFirst.touched.push(current.value);
-    breadthFirst.queue.unshift(current.left);
-    breadthFirst.queue.unshift(current.right);
+
+    if (current.left) {
+      breadthFirst.queue.unshift(current.left);
+    }
+    if (current.right) {
+      breadthFirst.queue.unshift(current.right);
+    }
   }
   return breadthFirst.touched;
 };
