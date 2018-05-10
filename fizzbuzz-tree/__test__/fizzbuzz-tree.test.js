@@ -1,8 +1,8 @@
 'use strict';
 
-import BinaryTree from '../binary-tree';
-import Node from '../node';
-import fizzBuzz from '../fizzbuzz-tree';
+const BinaryTree = require('../binary-tree');
+const Node = require('../node');
+const fizzBuzz = require('../fizzbuzz-tree');
 
 const one = new Node(10);
 const two = new Node(30);
@@ -30,12 +30,33 @@ seven.left = nine;
 
 
 describe('traversal and fizzbuzz', () => {
-  test('#fizzBuzz.traversal', () => {
-    expect(fizzBuzz.inOrderTraversal(tree.root)).toEqual(['fizz', 'fizz', 'buzz', 'fizz', 'fizzbuzz', 'buzz', 'fizzbuzz', 'fizz', 'buzz']);
+  test('#inOrderTraversal', () => {
+    fizzBuzz.inOrderTraversal(tree.root);
+    expect(fizzBuzz.touched).toEqual(['fizz', 'fizz', 'buzz', 'fizz', 'fizzbuzz', 'buzz', 'fizzbuzz', 'fizz', 'buzz']);
+    one.left = two;
+    one.right = three;
+    three.left = four;
+    three.right = five;
+    two.left = six;
+    six.left = seven;
+    six.right = eight;
+    seven.left = nine;
     fizzBuzz.touched = [];
-    expect(fizzBuzz.inOrderTraversal(six)).toEqual(['fizz', 'fizz', 'buzz', 'fizz']);
+
+    fizzBuzz.inOrderTraversal(six);
+    expect(fizzBuzz.touched).toEqual(['fizz', 'fizz', 'buzz', 'fizz']);
+    one.left = two;
+    one.right = three;
+    three.left = four;
+    three.right = five;
+    two.left = six;
+    six.left = seven;
+    six.right = eight;
+    seven.left = nine;
     fizzBuzz.touched = [];
-    expect(fizzBuzz.inOrderTraversal(three)).toEqual(['fizzbuzz', 'fizz', 'buzz']);
+    
+    fizzBuzz.inOrderTraversal(three);
+    expect(fizzBuzz.touched).toEqual(['fizzbuzz', 'fizz', 'buzz']);
   });
 });
 
