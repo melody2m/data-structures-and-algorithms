@@ -23,6 +23,6 @@ fizzBuzz.inOrderTraversal = (rootNode) => {
   fizzBuzz.touched.push(rootNode.value);
 
   fizzBuzz.inOrderTraversal(rootNode.right);
-  return fizzBuzz.touched;
+  return rootNode;
 };
 

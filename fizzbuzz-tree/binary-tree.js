@@ -1,6 +1,6 @@
 'use strict';
 
-export default class BinaryTree {
+module.exports = class BinaryTree {
   constructor(root = null) {
     this.root = root;
   }
