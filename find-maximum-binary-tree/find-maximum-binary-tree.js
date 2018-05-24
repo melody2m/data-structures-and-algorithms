@@ -2,7 +2,10 @@
 
 const findMax = module.exports = {};
 
-let max = 0;
+let 
+
+
+max = 0;
 
 findMax.traversal = (rootNode) => {
   if (!rootNode) {
